@@ -517,12 +517,10 @@
   </div>
 
 
-  <div class="sns-fb">
-
+  <!--<div class="sns-fb">
     <div class="fb-share-button" data-href="https://fish-kanji.netlify.app/" data-layout="button_count"
       data-size="small"></div>
-
-  </div>
+  </div>-->
 
   <div class="pagetop">
     <div class="pagetop_arrow"></div>
@@ -567,20 +565,20 @@
       const data = await d3.csv('./data/word.csv');
       const max = data.length;
 
-      data.sort((a, b) => a.yomi.localeCompare(b.yomi), 'ja');
+      //data.sort((a, b) => a.yomi.localeCompare(b.yomi), 'ja');
 
       count.innerHTML = max + " 件 ／ 678 件"
 
       for (let i = 0; i < max; i++) {
 
-        if (data[i].ai == "y") {
+        /*if (data[i].ai == "y") {
           gpt = "◯";
         }
         else {
           gpt = "×";
-        }
+        }*/
 
-        result.innerHTML += '<div class="table grid grid-rows-3 grid-cols-3 grid-flow-col gap-2 items-center"><div class="item_title text-8xl row-span-3 ...">' + data[i].word + '</div><div class="text-3xl col-span-3 ...">' + data[i].yomi + '</div><div class="row-span-2 col-span-3 ...">' + data[i].meaning + "生成AI：<span id='gpt'>" + gpt + "</span><span id='update'>データ更新日：" + data[i].update + '</span></div>';
+        result.innerHTML += '<div class="table grid grid-rows-3 grid-cols-3 grid-flow-col gap-2 items-center"><div class="item_title text-8xl row-span-3">' + data[i].word + '</div><div class="text-lg col-span-3">' + data[i].yomi + '</div><div class="text-sm row-span-1 col-span-3">' + data[i].meaning + " 画数：" + data[i].stroke + "</span><span id='update'>データ更新日：" + data[i].update + '</span></div>';
 
       };
 
@@ -594,7 +592,7 @@
         const data = await d3.csv('./data/word.csv');
         const max = data.length;
 
-        data.sort((a, b) => a.yomi.localeCompare(b.yomi), 'ja');
+        //data.sort((a, b) => a.yomi.localeCompare(b.yomi), 'ja');
 
         if (text.value != "") {
 
@@ -608,14 +606,14 @@
 
             if (data[j].word.indexOf(kensaku) != -1 || data[j].yomi.indexOf(kensaku) != -1 || data[j].meaning.indexOf(kensaku) != -1) {
 
-              if (data[j].ai == "y") {
+              /*if (data[j].ai == "y") {
                 gpt = "◯";
               }
               else {
                 gpt = "×";
-              }
+              }*/
 
-              result.innerHTML += '<div class="table grid grid-rows-3 grid-cols-3 grid-flow-col gap-2 items-center"><div class="item_title text-8xl row-span-3 ...">' + data[j].word + '</div><div class="text-3xl col-span-3 ...">' + data[j].yomi + '</div><div class="row-span-2 col-span-3 ...">' + data[j].meaning + "生成AI：<span id='gpt'>" + gpt + "</span><span id='update'>データ更新日：" + data[j].update + '</span></div>';
+              result.innerHTML += '<div class="table grid grid-rows-3 grid-cols-3 grid-flow-col gap-2 items-center"><div class="item_title text-8xl row-span-3">' + data[j].word + '</div><div class="text-lg col-span-3">' + data[j].yomi + '</div><div class="text-sm row-span-1 col-span-3">' + data[j].meaning + " 画数：" + data[j].stroke + "</span><span id='update'>データ更新日：" + data[j].update + '</span></div>';
 
               count += 1;
 
@@ -632,18 +630,18 @@
           const data = await d3.csv('./data/word.csv');
           const max = data.length;
 
-          data.sort((a, b) => a.yomi.localeCompare(b.yomi), 'ja');
+          //data.sort((a, b) => a.yomi.localeCompare(b.yomi), 'ja');
 
           for (let i = 0; i < max; i++) {
 
-            if (data[i].ai == "y") {
+            /*if (data[i].ai == "y") {
               gpt = "◯";
             }
             else {
               gpt = "×";
-            }
+            }*/
 
-            result.innerHTML += '<div class="table grid grid-rows-3 grid-cols-3 grid-flow-col gap-2 items-center"><div class="item_title text-8xl row-span-3 ...">' + data[i].word + '</div><div class="text-3xl col-span-3 ...">' + data[i].yomi + '</div><div class="row-span-2 col-span-3 ...">' + data[i].meaning + "生成AI：<span id='gpt'>" + gpt + "</span><span id='update'>データ更新日：" + data[i].update + '</span></div>';
+            result.innerHTML += '<div class="table grid grid-rows-3 grid-cols-3 grid-flow-col gap-2 items-center"><div class="item_title text-8xl row-span-3">' + data[i].word + '</div><div class="text-lg col-span-3">' + data[i].yomi + '</div><div class="text-sm row-span-1 col-span-3">' + data[i].meaning + " 画数：" + data[i].stroke + "</span><span id='update'>データ更新日：" + data[i].update + '</span></div>';
 
           };
 
@@ -689,10 +687,10 @@
 
   </script>
 
-  <!-- Facebookシェアボタン -->
+  <!-- Facebookシェアボタン 
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v19.0"
-    nonce="Pm3nh7PB"></script>
+    nonce="Pm3nh7PB"></script>-->
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPP84V2NHB"></script>
